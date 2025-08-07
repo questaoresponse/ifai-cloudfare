@@ -1,0 +1,27 @@
+/**
+ * For more details on how to configure Wrangler, refer to:
+ * https://developers.cloudflare.com/workers/wrangler/configuration/
+ */
+{
+	"$schema": "node_modules/wrangler/config-schema.json",
+	"name": "ifai-cloudfare",
+	"main": "src/index.ts",
+	"compatibility_date": "2025-03-03",
+    "d1_databases": [
+        {
+          "binding": "DB",
+          "database_name": "ifai",
+          "database_id": "a1a644f4-d913-4aa8-97db-7aa307ac58b9"
+        }
+    ],
+    "secrets_store_secrets": [
+        {
+            "store_id": "7f901bd88c214e05b34bf42a46d3aff0",
+            "binding": "SECRET",
+            "secret_name": "ifai"
+        }
+    ],
+	"observability": {
+		"enabled": true
+	}
+}
